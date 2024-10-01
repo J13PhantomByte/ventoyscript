@@ -1,0 +1,135 @@
+{
+    "control": [
+        { "VTOY_DEFAULT_MENU_MODE": "0" },
+		{ "VTOY_SORT_CASE_SENSITIVE": "0" },
+        { "VTOY_FILT_DOT_UNDERSCORE_FILE": "1" }
+    ],
+	
+	"theme": {
+    "file": "/ventoy/default/theme.txt",        
+    "display_mode": "GUI",
+    "ventoy_left": "5%",
+    "ventoy_top": "95%",
+    "ventoy_color": "#0000ff"
+    },
+	
+	"menu_class": [        
+        {
+            "key": "linuxmint-19.3",
+            "class": "linuxmint"
+        },
+		{
+            "key": "Grub2_File_Manager",
+            "class": "g2filemanager"
+        },
+		{
+            "key": "MiniTool",
+            "class": "minitool"
+        },        
+        {
+            "key": "Windows10",
+            "class": "windows10"
+        },
+		{
+            "dir": "/ISO/Linux",
+            "class": "linux"
+        },
+		{
+            "dir": "/ISO/Windows",
+            "class": "windows"
+        },
+		{
+            "dir": "/ISO",
+            "class": "iso"
+        },
+		{
+            "dir": "/ISO/WinPe",
+            "class": "winpe"
+        }
+		
+    ],
+	"menu_alias": [
+		{
+            "dir": "/ISO/Linux",
+            "alias": "[Linux İşletim Sistemleri]"
+        },
+		{
+            "dir": "/ISO/Windows",
+            "alias": "[Windows İşletim Sistemleri]"
+        },
+		{
+            "dir": "/ISO/WinPe",
+            "alias": "[WinPE Sistemler]"
+        },
+        {
+            "image": "/ISO/Linux/linuxmint-19.3-cinnamon-32bit.iso",
+            "alias": "Linux Mint v19.3(32bit)"
+        },
+        {
+            "image": "/ISO/Windows/Windows10_PRO_19041_450.iso",
+            "alias": "Windows10 Pro Build 19041_450"
+        },        
+        {
+            "image": "/ISO/WinPe/Grub2_File_Manager.iso",
+            "alias": "Grub2 File Manager"
+        },
+		{
+            "image": "/ISO/WinPe/MiniTool.Partition.Wizard.Technician.11.5.WinPE.iso",
+            "alias": "Minitool Partition Wizard v11.5"
+        }
+        
+    ],
+	"auto_install": [
+        {
+            "image": "/ISO/Windows/Windows10_PRO_19041_450.iso",
+            "template": [
+                "/ventoy/script/Win10_Autounattend1.xml",
+                "/ventoy/script/Win10_Autounattend2.xml",
+				"/ventoy/script/Win10_Autounattend3.xml"
+            ]
+        },
+        {
+            "image": "/Linux/ubuntu-16.04-server-amd64.iso",
+            "template": "/ventoy/script/my-ubuntu-server-minimalvm.seed",
+            "autosel": 1
+        }		
+    ],
+	"injection": [
+        {
+            "image": "/ISO/Linux/MX-19.1_x64.iso",
+            "archive": "/ventoy/driver/mx-driver.tar.gz"
+        },
+        {
+            "image": "/ISO/linux/ubuntu-20.04-desktop-amd64.iso",
+            "archive": "/ventoy/driver/ubuntu-driver.tar.bz2"
+        },        
+        {
+            "image": "/ISO/Windows/Windows10_PRO_19041_450.iso",
+            "archive": "/ventoy/driver/win10-driver.zip"
+        }
+    ],
+	"persistence": [
+        {
+            "image": "/ISO/Linux/MX-19.1_x64.iso",
+            "backend": "/ventoy/persistence/MX-19.1_x64.dat"
+        },
+        {
+            "image": "/ISO/ubuntu-20.04-desktop-amd64.iso",
+            "backend": [
+                "/ventoy/persistence/ubuntu_20.04_1.dat",
+                "/ventoy/persistence/ubuntu_20.04_2.dat",
+                "/ventoy/persistence/ubuntu_20.04_3.dat"
+            ],
+            "autosel": 2
+        },        
+        {
+            "image": "/ISO/Linux/linuxmint-19.3-xfce-64bit.iso",
+            "backend": "/ventoy/persistence/linuxmint_19.03.dat"           
+        }
+    ],
+	"auto_memdisk": [
+        "/ISO/WinPe/clonezilla-live-2.5.0-25-amd64.iso",
+        "/ISO/WinPe/KXPE.iso",
+        "/ISO/WinPe/MiniTool_11.5.iso"
+    ]
+}
