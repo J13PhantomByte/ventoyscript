@@ -1,4 +1,4 @@
-## hanya perlu ubah default nya dengan nama custom theme 
+## Hanya perlu ubah default nya dengan nama custom theme 
 
 > before :   "file": "/ventoy/default/theme.txt",   
 
